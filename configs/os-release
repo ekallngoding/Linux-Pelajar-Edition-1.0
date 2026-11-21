@@ -1,0 +1,17 @@
+PRETTY_NAME="LINUX_PELAJAR_1_0 (Cubic 2026-11-21 11:27)"
+NAME="Linux Pelajar Edition"
+VERSION_ID="26.04"
+VERSION="1.0 (Based on Ubuntu 26.04 LTS)"
+VERSION_CODENAME=resolute
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=resolute
+LOGO=linux-pelajar-logo
+
+
+
+

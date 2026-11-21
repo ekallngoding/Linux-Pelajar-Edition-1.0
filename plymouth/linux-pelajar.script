@@ -1,0 +1,53 @@
+# ==========================================
+# LINUX PELAJAR EDITION 1.0
+# Custom Plymouth Boot & Shutdown Animation
+# ==========================================
+
+# Background
+Window.SetBackgroundTopColor(0.02, 0.08, 0.20);
+Window.SetBackgroundBottomColor(0.02, 0.08, 0.20);
+
+# Load branding logo
+logo_image = Image("logo.png");
+logo_sprite = Sprite(logo_image);
+
+# Center logo slightly above screen center
+logo_sprite.SetX(
+    Window.GetWidth() / 2 - logo_image.GetWidth() / 2
+);
+
+logo_sprite.SetY(
+    Window.GetHeight() / 2 - logo_image.GetHeight() / 2 - 25
+);
+
+logo_sprite.SetOpacity(1);
+
+# Create Linux Pelajar text
+text_image = Image.Text("LINUX PELAJAR", 0.45, 0.82, 1.0, 1.0, "Sans 24");
+text_sprite = Sprite(text_image);
+
+text_sprite.SetX(
+    Window.GetWidth() / 2 - text_image.GetWidth() / 2
+);
+
+text_sprite.SetY(
+    Window.GetHeight() / 2 + logo_image.GetHeight() / 2 - 5
+);
+
+text_sprite.SetOpacity(1);
+
+# Blinking animation
+blink_phase = 0;
+
+fun refresh_callback()
+{
+    blink_phase += 0.04;
+
+    blink_opacity = 0.35 +
+        (0.65 * (Math.Cos(blink_phase) + 1) / 2);
+
+    text_sprite.SetOpacity(blink_opacity);
+}
+
+# Enable animation
+Plymouth.SetRefreshFunction(refresh_callback);

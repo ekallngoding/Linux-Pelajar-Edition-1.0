@@ -1,0 +1,12 @@
+[Unit]
+Description=Linux Pelajar Default User Avatar
+After=local-fs.target accounts-daemon.service
+Before=display-manager.service
+ConditionPathExists=!/var/lib/linux-pelajar-avatar-configured
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/linux-pelajar-default-avatar
+
+[Install]
+WantedBy=multi-user.target
